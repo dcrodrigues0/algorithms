@@ -15,6 +15,7 @@ public class InsertionSortImplementation {
                 }
             }
 
+            //putting the actualElement on the correct position, after shift one position
             arr[i] = actualElement;
         }
 
