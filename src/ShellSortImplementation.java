@@ -5,29 +5,26 @@ public class ShellSortImplementation {
         int[] arr = {15,10,5,2,-1,0};
 
         int gap = 1;
-        int arrLength = arr.length;
 
-        while(gap < arrLength){
+        while(gap < arr.length){
             gap = gap * 3 + 1;
         }
+
         gap = round(gap / 3);
 
         while(gap > 0){
-            for (int firstUnsortedGap = gap; firstUnsortedGap < arrLength; firstUnsortedGap++){
+            for (int i = gap; i < arr.length; i++){
 
-                int actualElement = arr[firstUnsortedGap];
-                int i;
+                int actualElement = arr[i];
+                int actualElementPosition = i;
 
-                for(i = firstUnsortedGap; i >= firstUnsortedGap; i = i - arrLength){
-                    if(arr[i - firstUnsortedGap] > actualElement){
-                        arr[i] = arr[i - firstUnsortedGap];
-                    }
+                while(actualElementPosition >= gap && arr[i] < arr[i - gap]){
+                    arr[i] = arr[i - gap];
+                    actualElementPosition -= gap;
                 }
-                arr[i] = actualElement;
-
+                arr[actualElementPosition] = actualElement;
             }
-
-            gap = gap / 2;
+            gap /= 2;
         }
 
         for (int element: arr){
