@@ -12,6 +12,7 @@ public class ShellSortImplementation {
 
         gap = round(gap / 3);
 
+        //when gap arrives 1 the while loop inside will act like a insertion sort
         while(gap > 0){
             for (int i = gap; i < arr.length; i++){
 
