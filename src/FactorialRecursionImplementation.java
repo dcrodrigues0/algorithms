@@ -1,4 +1,4 @@
-public class SimpleRecursionImplementation {
+public class FactorialRecursionImplementation {
 
     public static void main(String[] args) {
 
